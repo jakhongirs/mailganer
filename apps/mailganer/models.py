@@ -47,4 +47,4 @@ class UserEmailDistribution(BaseModel):
         verbose_name_plural = _("User email distributions")
 
     def __str__(self):
-        return f"{self.user} - {self.email_distribution}"
+        return f"{self.user}"

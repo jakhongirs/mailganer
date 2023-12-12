@@ -28,7 +28,9 @@ class User(AbstractUser, BaseModel):
         return {"access": str(token.access_token), "refresh": str(token)}
 
     def __str__(self):
-        return f"{self.full_name} - {self.phone_number} - {self.email}"
+        if self.full_name:
+            return self.full_name
+        return str(self.phone_number)
 
     def save(self, *args, **kwargs):
         if self.phone_number:
