@@ -41,6 +41,7 @@ class UserEmailDistribution(BaseModel):
         related_name="user_email_distributions",
     )
     is_read = models.BooleanField(_("Is read"), default=False)
+    tracking_pixel_url = models.URLField(_("Tracking Pixel URL"), blank=True, null=True)
 
     class Meta:
         verbose_name = _("User email distribution")
