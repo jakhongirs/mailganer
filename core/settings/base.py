@@ -33,6 +33,7 @@ DJANGO_APPS = [
 
 CUSTOM_APPS = [
     "apps.common",
+    "apps.users",
 ]
 
 THIRD_PARTY_APPS = [
@@ -100,6 +101,8 @@ DATABASES = {
         "ATOMIC_REQUESTS": True,
     }
 }
+
+AUTH_USER_MODEL = "users.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
