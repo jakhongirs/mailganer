@@ -16,6 +16,7 @@ class User(AbstractUser, BaseModel):
     full_name = models.CharField(_("full name"), max_length=255)
     email = models.EmailField(_("email"), null=True, blank=True)
     phone_number = PhoneNumberField(_("phone number"), max_length=32, unique=True)
+    birth_date = models.DateField(_("birth date"), null=True, blank=True)
 
     objects = UserManager()
     USERNAME_FIELD = "phone_number"
