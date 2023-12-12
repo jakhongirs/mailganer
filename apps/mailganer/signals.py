@@ -21,7 +21,7 @@ def create_email_distribution_all(sender, instance, created, **kwargs):
                 message=instance.template.template,
                 recipient_list=[user.email],
                 user_fullname=user.full_name,
-                user_birthdate=user.birth_date.strftime("%Y-%m-%d"),  # Replace with your actual method to get birthdate
+                user_birthdate=user.birth_date,
             )
 
 
@@ -42,5 +42,5 @@ def create_user_email_distribution(sender, instance, action, **kwargs):
                     message=instance.template.template,
                     recipient_list=[user.email],
                     user_fullname=user.full_name,
-                    user_birthdate=user.birth_date.strftime("%Y-%m-%d"),
+                    user_birthdate=user.birth_date,
                 )
